@@ -1,0 +1,19 @@
+{
+  "name": "comp_se_200",
+  "version": "1.0.0",
+  "description": "**Purpose**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhtuni/comp_se_200.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhtuni/comp_se_200/issues"
+  },
+  "homepage": "https://github.com/hhtuni/comp_se_200#readme"
+}
