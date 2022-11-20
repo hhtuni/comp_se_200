@@ -1,5 +1,7 @@
+# H. Heimonen 20.11.2022
 # Base of this file is from https://docs.github.com/en/actions/quickstart.
 # This will be used to add own actions. 
+
 
 
 name: GitHub Actions
