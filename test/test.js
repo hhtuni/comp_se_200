@@ -1,9 +1,6 @@
-var lib = process.env.JSCOV ? require('../src-cov') : require('../src');
+import add from '../src/add.js'
+import chai from 'chai'
 
-var expect = require('chai').expect;
-describe('#add()', function () {
-  it('should add numbers', function () {
-    lib.add(2,2)
-    expect(lib.add(2,2)).to.equal(4);
-  });
+it('should add numbers', function () {
+  chai.expect(add(2,2)).to.equal(4);
 });
