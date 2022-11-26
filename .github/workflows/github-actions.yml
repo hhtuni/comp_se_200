@@ -20,12 +20,12 @@ jobs:
       with:
         node-version: 14.x
 
-    - name: npm install, make test-coverage
+    - name: make unit-test-cov
       run: |
-        npm install
-        npm test
+        make unit-test-cov
 
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: "./coverage/coverage.lcov"
