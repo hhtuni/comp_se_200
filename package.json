@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage":"c8 --reporter=lcovonly npm test"
   },
   "repository": {
     "type": "git",

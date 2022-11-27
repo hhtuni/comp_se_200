@@ -20,9 +20,10 @@ jobs:
       with:
         node-version: 14.x
 
-    - name: make unit-test-cov
+    - name: npm install, npm run coverage
       run: |
-        make unit-test-cov
+        npm install
+        npm run coverage
 
     - name: Coveralls
       uses: coverallsapp/github-action@master
