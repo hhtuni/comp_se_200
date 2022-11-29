@@ -1,5 +1,5 @@
 import chai from 'chai';
-import get from '../utility_library/src/get.js';
+import get from '../src/get.js';
 
 describe('Get.js', () => {
     // create test object as per documentation
