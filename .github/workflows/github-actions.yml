@@ -21,6 +21,7 @@ jobs:
 
     - name: npm install, npm run coverage
       run: |
+        npm cache verify
         npm install
         npm run coverage
 
