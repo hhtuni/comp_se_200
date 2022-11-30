@@ -19,10 +19,9 @@ jobs:
       with:
         node-version: 14.x
 
-    - name: npm install, npm run coverage
+    - name: npm ci, npm run coverage
       run: |
-        npm cache verify
-        npm install
+        npm ci
         npm run coverage
 
     - name: Coveralls
