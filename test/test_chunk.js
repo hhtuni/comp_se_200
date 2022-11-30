@@ -27,23 +27,23 @@ describe('Chunk.js', () => {
     const emptyArray = Array();
     const undefinedArray = Array(undefined);
 
-    // it('should return array with chunk length of 1 when size parameter is 1', () => {
-    //     const chunkArray = chunk(numericArray, 1);
-    //     expect(chunkArray).to.be.an('array');
-    //     expect(chunkArray).to.have.lengthOf(3);
-    //     expect(chunkArray[0]).to.equal([numericArray[0]]);
-    //     expect(chunkArray[1]).to.equal([numericArray[1]]);
-    //     expect(chunkArray[2]).to.equal([numericArray[2]]);
-    // });
+    it('should return array with chunk length of 1 when size parameter is 1', () => {
+        const chunkArray = chunk(numericArray, 1);
+        expect(chunkArray).to.be.an('array');
+        expect(chunkArray).to.have.lengthOf(3);
+        expect(chunkArray[0]).to.equal([numericArray[0]]);
+        expect(chunkArray[1]).to.equal([numericArray[1]]);
+        expect(chunkArray[2]).to.equal([numericArray[2]]);
+    });
 
-    // it('should return array with default chunk length of 1 when size parameter is not given', () => {
-    //     const chunkArray = chunk(numericArray);
-    //     expect(chunkArray).to.be.an('array');
-    //     expect(chunkArray).to.have.lengthOf(3);
-    //     expect(chunkArray[0]).to.equal([numericArray[0]]);
-    //     expect(chunkArray[1]).to.equal([numericArray[1]]);
-    //     expect(chunkArray[2]).to.equal([numericArray[2]]);
-    // });
+    it('should return array with default chunk length of 1 when size parameter is not given', () => {
+        const chunkArray = chunk(numericArray);
+        expect(chunkArray).to.be.an('array');
+        expect(chunkArray).to.have.lengthOf(3);
+        expect(chunkArray[0]).to.equal([numericArray[0]]);
+        expect(chunkArray[1]).to.equal([numericArray[1]]);
+        expect(chunkArray[2]).to.equal([numericArray[2]]);
+    });
     
     it('should return empty array when the array to process is empty', () => {
         const chunkArray = chunk(emptyArray);
@@ -66,14 +66,12 @@ describe('Chunk.js', () => {
 
     it('should return empty array when the size parameter is null', () => {
         const chunkArray = chunk(charArray, null);
-        
         expect(chunkArray).to.be.an('array');
         expect(chunkArray).to.be.empty;
     });
 
     it('should return empty array when the size parameter is negative value', () => {
         const chunkArray = chunk(charArray, -3);
-        
         expect(chunkArray).to.be.an('array');
         expect(chunkArray).to.be.empty;
     });
