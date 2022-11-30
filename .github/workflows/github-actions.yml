@@ -22,7 +22,6 @@ jobs:
     - name: npm install, npm run coverage
       run: |
         npm install
-        npm test
         npm run coverage
 
     - name: Coveralls
