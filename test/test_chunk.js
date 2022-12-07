@@ -10,21 +10,19 @@ describe('Chunk.js', () => {
     it('should return array with default chunk length of 1 when size parameter is not given', () => {
         const chunkArray = chunk(numericArray);
         expect(chunkArray).to.be.an('array');
-        expect(chunkArray).to.have.lengthOf(5);
-        expect(chunkArray).to.equal([[0], [1], [2], [3], [4]]);
+        expect(chunkArray).to.eql([[0], [1], [2], [3], [4]]);
     });
 
     it('should return array with chunk length of 2 when size parameter is 2', () => {
         const chunkArray = chunk(charArray, 3);
         expect(chunkArray).to.be.an('array');
-        expect(chunkArray).to.have.lengthOf(2);
-        expect(chunkArray).to.equal([['a', 'b', 'c'], ['d', 'e', 'f']]);
+        expect(chunkArray).to.eql([['a', 'b', 'c'], ['d', 'e', 'f']]);
     });
 
-    it("should return array with the final chunk containing the remaining elements, when the input array can't be split evenly", () => {
+    it("should return array with the final chunk containing the remaining elements when the input array can't be split evenly", () => {
         const chunkArray = chunk(numericArray, 2);
         expect(chunkArray).to.be.an('array');
-        expect(chunkArray).to.equal([[0, 1], [2, 3], [4]]);
+        expect(chunkArray).to.eql([[0, 1], [2, 3], [4]]);
     });
     
     it('should return empty array when the array to process is empty', () => {
