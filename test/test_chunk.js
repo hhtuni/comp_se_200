@@ -17,6 +17,14 @@ describe('Chunk.js', () => {
         expect(chunkArray).to.eql([['a', 'b', 'c'], ['d', 'e', 'f']]);
     });
 
+    it('should return array with chunk length defined by a function', () => {
+        function size() {
+            return 1;
+        }
+        const chunkArray = chunk(numericArray, size());
+        expect(chunkArray).to.eql([[0], [1], [2], [3], [4]]);
+    });
+
     it("should return array with the final chunk containing the remaining elements when the input array can't be split evenly", () => {
         const chunkArray = chunk(numericArray, 2);
         expect(chunkArray).to.eql([[0, 1], [2, 3], [4]]);
@@ -76,5 +84,4 @@ describe('Chunk.js', () => {
         const chunkArray = chunk(charArray, {'size' : 1});
         expect(chunkArray).to.be.an('array').that.is.empty;
     });
-
 });
