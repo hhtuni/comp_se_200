@@ -12,6 +12,11 @@ describe('Chunk.js', () => {
         expect(chunkArray).to.eql([[0], [1], [2], [3], [4]]);
     });
 
+    it('should return array with default chunk length when the size parameter is undefined', () => {
+        const chunkArray = chunk(charArray, undefined);
+        expect(chunkArray).to.eql([['a'], ['b'], ['c'], ['d'], ['e'], ['f']])
+    });
+
     it('should return array with chunk length of 2 when size parameter is 2', () => {
         const chunkArray = chunk(charArray, 3);
         expect(chunkArray).to.eql([['a', 'b', 'c'], ['d', 'e', 'f']]);
