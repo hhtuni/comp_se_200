@@ -18,6 +18,10 @@ const expect = chai.expect
 
 describe('Compact.js', () => {
     
+    it('should return the same array when there are no values to be filtered', () => {
+        const array = [1, 2, 3];
+        expect(compact(array)).to.equal(array);
+    });
 
     it('should return array with the value "false" removed', () => {
         const array = [1, 2, false, 3];
@@ -56,8 +60,7 @@ describe('Compact.js', () => {
 
     it('should return empty array when all values are falsey', () => {
         const array = [false, 0];
-        expect(compact(array)).to.be.an('array');
-        expect(compact(array)).to.be.empty;
+        expect(compact(array)).to.be.an('array').that.is.empty;;
     });
 
 
