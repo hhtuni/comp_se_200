@@ -25,6 +25,18 @@ describe('Chunk.js', () => {
         expect(chunkArray).to.eql([[0], [1], [2], [3], [4]]);
     });
 
+    it('should return array with chunk length defined by an object', () => {
+        function MyNumber(n) {
+            this.value = n;
+        }
+        MyNumber.prototype.valueOf = function() {
+            return this.value;
+        };
+        const number = new MyNumber(1);
+        const chunkArray = chunk(numericArray, number);
+        expect(chunkArray).to.eql([[0], [1], [2], [3], [4]]);
+    });
+
     it("should return array with the final chunk containing the remaining elements when the input array can't be split evenly", () => {
         const chunkArray = chunk(numericArray, 2);
         expect(chunkArray).to.eql([[0, 1], [2, 3], [4]]);
@@ -75,13 +87,13 @@ describe('Chunk.js', () => {
         expect(chunkArray).to.be.an('array').that.is.empty;
     });
 
-    it('should return empty array when the size parameter is symbol', () => {
-        const chunkArray = chunk(charArray, Symbol(1));
+    it('should return empty array when the size parameter is negative infinity', () => {
+        const chunkArray = chunk(charArray, -1/0);
         expect(chunkArray).to.be.an('array').that.is.empty;
     });
 
-    it('should return empty array when the size parameter is object', () => {
-        const chunkArray = chunk(charArray, {'size' : 1});
+    it('should return empty array when the size parameter is symbol', () => {
+        const chunkArray = chunk(charArray, Symbol(1));
         expect(chunkArray).to.be.an('array').that.is.empty;
     });
 });
