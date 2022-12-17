@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "coverage": "c8 --reporter=lcovonly -x='src/.internal/*' npm test"
+    "coverage": "c8 --reporter=lcovonly -n='src/*' -x='src/.internal/*' npm test"
   },
   "repository": {
     "type": "git",
