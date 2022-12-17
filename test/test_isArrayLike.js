@@ -1,29 +1,6 @@
 import isArrayLike from '../src/isArrayLike.js'
 import chai from 'chai'
 const expect = chai.expect
-/**
- * Checks if `value` is array-like. A value is considered array-like if it's
- * not a function and has a `value.length` that's an integer greater than or
- * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
- *
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- * @example
- *
- * isArrayLike([1, 2, 3])
- * // => true
- *
- * isArrayLike(document.body.children)
- * // => true
- *
- * isArrayLike('abc')
- * // => true
- *
- * isArrayLike(Function)
- * // => false
- */
 
 describe('IsArrayLike.js', () => {
     const arrayLikeObject = { 0 : "a", 1 : "b", 2 : "c", length: 3 };

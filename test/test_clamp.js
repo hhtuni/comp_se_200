@@ -1,23 +1,7 @@
 import clamp from '../src/clamp.js'
 import chai from 'chai'
 const expect = chai.expect
-/**
- * Clamps `number` within the inclusive `lower` and `upper` bounds.
- *
- * @since 4.0.0
- * @category Number
- * @param {number} number The number to clamp.
- * @param {number} lower The lower bound.
- * @param {number} upper The upper bound.
- * @returns {number} Returns the clamped number.
- * @example
- *
- * clamp(-10, -5, 5)
- * // => -5
- *
- * clamp(10, -5, 5)
- * // => 5
- */
+
 describe('Clamp.js', () => {
     describe('should return upper bound when number to clamp is bigger than upper bound', () => {
         it('clamp(10, -5, 5)', () => {
